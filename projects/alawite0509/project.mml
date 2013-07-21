@@ -1,0 +1,70 @@
+{
+  "bounds": [
+    -180,
+    -85.05112877980659,
+    180,
+    85.05112877980659
+  ],
+  "center": [
+    0,
+    0,
+    2
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "alawite_shape",
+    "fields": [
+      "district"
+    ],
+    "template_teaser": "<div id=\"map-teaser\">\n<span class=\"district\">\n{{{district}}}\n</span>\n<br/>\n<span class=\"label\">Change in district share</span>\n<span class=\"value\">{{{chg_alawite_2009_c}}}</span>\n<div id=\"chart-seperator\">\n<br/>\n</div>\n<div id='char-map'>\n<img src=\"http://chart.googleapis.com/chart?chf=a,s,000000|bg,s,3A3A3A&chs=200x150&cht=p&chco=4E691A|AA0033\n&chds=0,{{{total_2005}}}\n&chd=t:{{{alawite_2005}}},{{{total_2005}}}\n&chdl=Alawite++voters|Total+Voters&chdlp=b\n&chl={{{alawite_2005}}}|{{{total_2005}}}\n&chtt=Share+of+Registered+Voters+2005\n&chts=E0E0E0,11.5\" width=\"200\" height=\"150\" alt=\"Share of Registered Voters 2005\" />\n<img src=\"http://chart.googleapis.com/chart?chf=a,s,000000|bg,s,3A3A3A&chs=200x150&cht=p&chco=4E691A|AA0033\n&chds=0,{{{total_2009}}}\n&chd=t:{{{alawite_2009}}},{{{total_2009}}}\n&chdl=Alawite++voters|Total+Voters&chdlp=b\n&chl={{{alawite_2009}}}|{{{total_2009}}}\n&chtt=Share+of+Registered+Voters+2009\n&chts=E0E0E0,11.5\" width=\"200\" height=\"150\" alt=\"Share of Registered Voters 2009\" />\n</div>\n</div>"
+  },
+  "minzoom": 0,
+  "maxzoom": 22,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        35.10347366333008,
+        33.053855895996094,
+        36.639190673828125,
+        34.69140625
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "/home/rad/bay-root/data/polygons.sqlite",
+        "table": "(select \n\tOGC_FID,\n\tGEOMETRY,\n\tdistrict,\n\talawite_2005,\n\talawite_2009,\n\talawite_2012,\n\tpct_alawite_2005,\n\tpct_alawite_2009,\n\tpct_alawite_2012,\n\t -- change in share of electorate \n\t( pct_alawite_2009 - pct_alawite_2005 ) as chg_alawite_2009,\n\t( pct_alawite_2012 - pct_alawite_2009 ) as chg_alawite_2012,\n\t-- abs() for text + marker sizes\n\tabs( pct_alawite_2009 - pct_alawite_2005 ) as chg_alawite_2009_a,\n\tabs( pct_alawite_2012 - pct_alawite_2009 ) as chg_alawite_2012_a,\n\t-- easier to read colums for cartography + tooltips\n\tcast(round((pct_alawite_2009 - pct_alawite_2005),2) as text)||'%' as chg_alawite_2009_c,\n\tcast(round((pct_alawite_2012 - pct_alawite_2009),2) as text)||'%' as chg_alawite_2012_c,\n\t--integer  percentages\n\tcast (cast(round(pct_alawite_2005) as integer) as  text)||'%' as pct_alawite_2005_i,\n\tcast (cast(round(pct_alawite_2009) as integer) as  text)||'%' as pct_alawite_2009_i,\n\tcast (cast(round(pct_alawite_2012) as integer) as  text)||'%' as pct_alawite_2012_i,\n\t--total votes \n\ttotal_2005,\n\ttotal_2009,\n\ttotal_2012\nfrom  (\n\tselect\n\t\tOGC_FID,\n\t\tGEOMETRY,\n\t\tdistrict,\n\t\talawite_2005,\n\t\talawite_2009,\n\t\talawite_2012,\n\t\ttotal_2005,\n\t\ttotal_2009,\n\t\ttotal_2012,\n\t\t-- calculate percent of electorate by election by year\n\t\t( cast(alawite_2005 as float) * 100 / cast(total_2005 as float) ) as pct_alawite_2005, \n\t\t( cast(alawite_2009 as float) * 100 / cast(total_2009 as float) ) as pct_alawite_2009,\n\t\t( cast(alawite_2012 as float) * 100 / cast(total_2012 as float) ) as pct_alawite_2012\n\tfrom ( select\n\t\t\t*,\n\t\t\t-- calculate total number of votes for each year\n\t\t\t(sunni_2005 + alawite_2005 + shia_2005 + druze_2005 + grkorth_2005 + maronite_2005 + grkcth_2005 + evang_2005 + minorities_2005 + armorth_2005 + armcth_2005) as total_2005,\n\t\t\t(sunni_2009 + alawite_2009 + shia_2009 + druze_2009 + grkorth_2009 + maronite_2009 + grkcth_2009 + evang_2009 + minorities_2009 + armorth + armcth_2009) as total_2009,\n\t\t\t(sunni_2012 + alawite_2012 + shia_2012 + druze_2012 + grkorth_2012 + maronite_2012 + grkcth_2012 + evang_2012 + minorities_2012 + armorth_2012 + armcth_2012) as total_2012\n\t\t from conf_shape\n\t) as a\n) as b\n) as data",
+        "attachdb": "",
+        "extent": "",
+        "id": "alawite_shape",
+        "project": "alawite0509",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "alawite_shape",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "alawite_shape"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "_basemap": "http://a.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp",
+  "name": "",
+  "description": "",
+  "legend": "<div id=\"map-legend\">\n<span>\nChange in the share of Alawite registered voters between 2005 and 2009 elections.\n</span>\n</div>"
+}
