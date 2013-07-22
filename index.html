@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>
+Lebanon election data
+</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+</head>
+
+<body>
+
+<div id="map-wrap">
+<div id='map'></div>
+<script src='js/maps.js'></script>
+
+</div>
+<div class="bar-container">
+ 
+  <div class="bar clear-float" id="map-control">
+    <a href="#" class="view view-map on"><span><img src='css/map-icon.png'/></span>Map</a>
+    <a href="#" class="view about"><span><img src='css/info-icon.png'/></span>About</a>
+     <div class="bar-section bar-section-view">
+	<label>Dates:</label>
+	<ul>
+	  <li><a class="0509 on filter-data" href="#date=59">2005-2009</a></li>
+	  <li><a class="0912 filter-data" href="#date=912">2009-2012</a></li>
+	</ul>
+     </div>
+      <div class="bar-section bar-section-cat">
+      <label>Confession:</label>
+	<div class="categories">
+		<a href="#" class="menu all">Sunni<em></em></a>
+        <ul id="categories" class="clear-float" style="display: none;">
+			<li><a class="sunni on" href="#conf=sunni">Sunni</a></li>
+			<li><a class="shia" href="#conf=shia">Shia</a></li>
+			<li><a class="alawite" href="#conf=alawite">Alawite</a></li>
+			<li><a class="druze" href="#conf=druze">Druze</a></li>
+			<li><a class="grkorth" href="#conf=grkorth">Greek Orthodox</a></li>
+			<li><a class="maronite" href="#conf=maronite">Maronite</a></li>
+			<li><a class="armorth" href="#conf=armorth">Armen Orthodox </a></li>
+			<li><a class="evang" href="#conf=evang">Evangelist</a></li>
+			<li><a class="minorities" href="#conf=minorities">Minorities</a></li>
+                        <li><a class="armcth" href="#conf=armcth">Armen Catholic</a></li>
+		</ul>
+	</div>
+				</div>
+			</div>
+		</div>
+<div id="about-box-container">
+	<div class="clear-float" id="about-box">
+	<h1>Share of Registered Voters by Confession</h1>
+         <em>(text to change)</em>
+        <p>
+        This map shows changes in percentage share of registered voters by confession. Arrows indicate and increase or decrease in the percentage of registered voters since 2009. You can mouse over any district to see voter registration rates by confession since 2005
+        </p>
+        <p>
+        <em>Note: The percentage of the electorate registered to a given confession will decrease even if the total number of voters registered to that confession were to increase if registrations of other confessions increases at a greater rate.</em>
+        </p>
+	</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="js/jquery.bbq.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
