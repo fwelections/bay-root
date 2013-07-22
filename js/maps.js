@@ -121,7 +121,7 @@ var layers = [{
 var map = L.mapbox.map('map')
     .setView([33.9274, 35], 8)
     .addLayer(L.mapbox.tileLayer('tunisia.map-bzxca2co'));
-
+   
 
 function changeMap(options){
   // options.date=59 || options.date=912
@@ -141,6 +141,7 @@ function changeMap(options){
   if (layer.name==mapname){
    console.log ('found layer at index' +i);
    //removing old layer
+  //map.ease.location({ lat: , lon:  }).zoom(6).optimal();
  $.each(layers, function(i, l) {
                     if (l.layer !== layer.layer && map.hasLayer(l.layer)) {
                         map.removeLayer(l.layer);
@@ -152,9 +153,11 @@ function changeMap(options){
     layer.control = L.mapbox.gridControl(layer.layer.getLayers()[1]);
     if (gridControl) map.removeControl(gridControl);
         layer.layer.addTo(map);
+        
     gridControl = layer.control.addTo(map);
    }
+
   });
 
-
+map.setZoom(8);
 }           
