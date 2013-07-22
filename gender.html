@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>
+Lebanon election data
+</title>
+<link href="css/gender.css" rel="stylesheet" type="text/css"/>
+<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+</head>
+
+<body>
+
+<div id="map-wrap">
+<div id='map'></div>
+<script src='js/mapgender.js'></script>
+
+</div>
+<div class="bar-container">
+ 
+  <div class="bar clear-float" id="map-control">
+    <a href="#" class="view view-map on"><span><img src='css/map-icon.png'/></span>Map</a>
+    <a href="#" class="view about"><span><img src='css/info-icon.png'/></span>About</a>
+     <div class="bar-section bar-section-view">
+	<label>Gender:</label>
+	<ul>
+          <li><a class="all on filter-data" href="#gender=all">All</a></li>
+	  <li><a class="male on filter-data" href="#gender=male">Male</a></li>
+	  <li><a class="male on filter-data" href="#gender=female">Female</a></li>
+	</ul>
+     </div>
+      <div class="bar-section bar-section-cat">
+      <label>Layer:</label>
+	<div class="categories">
+		<a href="#" class="menu all">Registration<em></em></a>
+        <ul id="categories" class="clear-float" style="display: none;">
+			<li><a class="registration on" href="#layer=registration">Registration</a></li>
+			<li><a class="turnout" href="#layer=turnout">Turnout</a></li>
+			<li><a class="vote" href="#layer=vote">Vote</a></li>
+		</ul>
+	</div>
+				</div>
+			</div>
+		</div>
+<div id="about-box-container">
+	<div class="clear-float" id="about-box">
+	<h1>Share of Registered Voters by Confession</h1>
+         <em>(text to change)</em>
+        <p>
+        This map shows changes in percentage share of registered voters by confession. Arrows indicate and increase or decrease in the percentage of registered voters since 2009. You can mouse over any district to see voter registration rates by confession since 2005
+        </p>
+        <p>
+        <em>Note: The percentage of the electorate registered to a given confession will decrease even if the total number of voters registered to that confession were to increase if registrations of other confessions increases at a greater rate.</em>
+        </p>
+	</div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="js/jquery.bbq.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/gender.js"></script>
+</body>
+</html>
