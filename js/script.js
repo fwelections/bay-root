@@ -6,6 +6,8 @@ $links.on('click', function() {
 if (!$(this).hasClass("on")) {
 var href = $(this).attr('href').replace(/^#/, ''),
 option = $.deparam(href, true);
+//alert(href);
+//date switching
 $.bbq.pushState(option);
 }
 return false;
@@ -14,6 +16,7 @@ return false;
 $('.view').live('click', function(){
 	$('.view').each(function(){
 		$(this).removeClass('on')
+                
 	});
 	$(this).addClass('on');
 });
@@ -25,7 +28,7 @@ $(window).bind('hashchange', function(event) {
 	if (hashOptions.conf == null) hashOptions.conf = "sunni";
 	var filter = "";
 	for (var opt in hashOptions) {
-		if (hashOptions[opt] != "all") {
+		if (hashOptions[opt] != "sunni") {
 			filter += "." + hashOptions[opt];
 		}
 	}
@@ -37,6 +40,7 @@ $(window).bind('hashchange', function(event) {
 	$(".categories .menu").html($catLink.html()).removeClass(removeClass).addClass(hashOptions.category).append("<em></em>");
 	$catLinks.removeClass("on");
 	$catLink.addClass("on");
+        changeMap(hashOptions);
 	})
 .trigger('hashchange');
 var $catMenu = $(".bar .bar-section-cat"), timeOut;

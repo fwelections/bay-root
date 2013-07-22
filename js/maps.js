@@ -122,10 +122,39 @@ var map = L.mapbox.map('map')
     .setView([33.9274, 35], 8)
     .addLayer(L.mapbox.tileLayer('tunisia.map-bzxca2co'));
 
-var gridControl;
 
-    layers[0].control = L.mapbox.gridControl(layers[0].layer.getLayers()[1]);
+function changeMap(options){
+  // options.date=59 || options.date=912
+
+  if(options.date==59)
+  { 
+    var mapname= options.conf + '0509';
+
+  }
+  else
+  {
+   var mapname= options.conf + '0912';
+  } 
+
+  $.each(layers, function(i, layer) {
+   //going through layers comparing the name to the map name we just made , if found remove the previous one and add the new one 
+  if (layer.name==mapname){
+   console.log ('found layer at index' +i);
+   //removing old layer
+ $.each(layers, function(i, l) {
+                    if (l.layer !== layer.layer && map.hasLayer(l.layer)) {
+                        map.removeLayer(l.layer);
+                    }
+                });
+   var gridControl;
+    
+       
+    layer.control = L.mapbox.gridControl(layer.layer.getLayers()[1]);
     if (gridControl) map.removeControl(gridControl);
-                layers[0].layer.addTo(map);
-            gridControl = layers[0].control.addTo(map);
-           
+        layer.layer.addTo(map);
+    gridControl = layer.control.addTo(map);
+   }
+  });
+
+
+}           
