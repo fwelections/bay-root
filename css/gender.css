@@ -953,7 +953,7 @@ ol,ul {
     color: white !important;
     font: 13px/20px Verdana,Tahoma !important;
     left: 50px !important;
-    max-height: 400px !important;
+    max-height: 427px !important;
     max-width: 427px !important;
     min-width: 427px !important;
     opacity: 0.9 !important;
@@ -976,8 +976,14 @@ text-align: center;
     text-decoration: underline;
 }
 #extended_data {
-    color: black;
+    color: #949494;
     text-align: right;
+}
+ #extended_data .district_name{
+    font-size: medium;
+    font-style: normal;
+    font-weight: bolder;
+    text-decoration: underline;
 }
 #pie {
     float: left;

@@ -95,7 +95,5 @@ function changeMap(options){
    }
 
   });
-map.ui.legend.add();
-map.ui.refresh();
 map.setZoom(9);
 }           
