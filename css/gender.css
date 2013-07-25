@@ -949,7 +949,7 @@ ol,ul {
 }
 .mobile .view { display:none; }
 .map-tooltip {
-    background: none repeat scroll 0 0 #3A3A3A !important;
+    background: none repeat scroll 0 0 #F5F5F5 !important;
     color: white !important;
     font: 13px/20px Verdana,Tahoma !important;
     left: 50px !important;
@@ -961,10 +961,10 @@ ol,ul {
     position: fixed !important;
 }
  #map { position:absolute; top:0; bottom:0; width:100%; }
-.map-legends{
+/*.map-legends{
 display:none !important;
 
-}
+}*/
 #map-teaser{
 text-align: center;
 
@@ -975,3 +975,12 @@ text-align: center;
     font-weight: bolder;
     text-decoration: underline;
 }
+#extended_data {
+    color: black;
+    text-align: right;
+}
+#pie {
+    float: left;
+    width: 240px;
+}
+

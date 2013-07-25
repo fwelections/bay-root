@@ -25,7 +25,7 @@ var $catLinks = $(".bar-section-cat a");
 $(window).bind('hashchange', function(event) {
 	var hashOptions = $.deparam.fragment();
 	if (hashOptions.gender == null) hashOptions.gender = "all";
-	if (hashOptions.layer == null) hashOptions.layer = "vote";
+	if (hashOptions.layer == null) hashOptions.layer = "registration";
 	var filter = "";
 	for (var opt in hashOptions) {
 		if (hashOptions[opt] != "all") {
@@ -40,7 +40,7 @@ $(window).bind('hashchange', function(event) {
 	$(".categories .menu").html($catLink.html()).removeClass(removeClass).addClass(hashOptions.category).append("<em></em>");
 	$catLinks.removeClass("on");
 	$catLink.addClass("on");
-        changeMap(hashOptions);
+         changeMap(hashOptions);
 	})
 .trigger('hashchange');
 var $catMenu = $(".bar .bar-section-cat"), timeOut;
