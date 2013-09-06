@@ -989,4 +989,17 @@ text-align: center;
     float: left;
     width: 240px;
 }
+.view-map
+{ 
+    position: fixed !important;
+    right: 20px;
+    top: 20px
 
+}
+.about
+{
+    position: fixed !important;
+    right: 20px;
+    top: 100px;
+    width: 96px;
+}
