@@ -119,7 +119,7 @@ var layers = [{
           L.mapbox.gridLayer('tunisia.armcth0912')])
   }];
 var map = L.mapbox.map('map')
-    .setView([33.9274, 35], 8)
+    .setView([33.9274, 35], 9)
     .addLayer(L.mapbox.tileLayer('tunisia.map-bzxca2co'));
    
 
