@@ -159,5 +159,5 @@ function changeMap(options){
 
   });
 
-map.setZoom(8);
+map.setZoom(9);
 }           
