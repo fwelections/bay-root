@@ -988,6 +988,7 @@ text-align: center;
 #pie {
     float: left;
     width: 240px;
+    display:none !important;
 }
 .view-map
 { 
