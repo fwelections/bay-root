@@ -30,8 +30,8 @@ var layers = [
           L.mapbox.gridLayer('tunisia.male_turnout')])
   }];
 var map = L.mapbox.map('map')
-    .setView([33.9274, 35], 9)
-    .addLayer(L.mapbox.tileLayer('tunisia.map-axs0unb8'));
+    .setView([33.9274, 35.7701], 9)
+    .addLayer(L.mapbox.tileLayer('tunisia.map-ukt4mlk3'));
    
 
 function changeMap(options){
