@@ -52,7 +52,7 @@ h1 {
   font-size:32px;
   margin-bottom:20px;
   line-height:1em;
-  color:#356244;
+  color:#0152B0;
   }
 
 h2 {
@@ -433,7 +433,7 @@ body { background-color:#e4e3df; }
 .bar {
 	margin-left: 25%;
 	margin-right:40px;
-	background-color: #356244;
+	background-color: #0152B0;
 	box-shadow: 5px 10px 15px 0 rgba(0, 0, 0, 0.55);
 	min-width:710px;
 }
@@ -447,7 +447,7 @@ body { background-color:#e4e3df; }
 }
 
 .bar .view {
-	background-color: #4b8c61;
+	background-color: #0152B0;
 	padding: 22px;
 	padding-left: 44px;
 	position: relative;
@@ -508,9 +508,9 @@ body { background-color:#e4e3df; }
 }
 
 .bar .bar-section-view {
-	background-color: #356244;
-	border-left: 1px solid #356244;
-	border-right: 1px solid #356244;
+	background-color: #0152B0;
+	border-left: 1px solid #0152B0;
+	border-right: 1px solid #0152B0;
 }
 
 .bar .bar-section ul {

@@ -52,7 +52,7 @@ h1 {
   font-size:32px;
   margin-bottom:20px;
   line-height:1em;
-  color:#ca002a;
+  color:#0152B0;
   }
 
 h2 {
@@ -426,15 +426,14 @@ body { background-color:#e4e3df; }
 /*nav bar*/
 .bar-container {
 	position: fixed;
-	width:80%;
+	width:100%;
 	bottom: 40px;
 	z-index: 2;
 }
 .bar {
 	margin-left: 25%;
 	margin-right:40px;
-	background-image: url("./menu.png");
-        background-repeat: repeat;
+	background-color: #0152B0;
 	box-shadow: 5px 10px 15px 0 rgba(0, 0, 0, 0.55);
 	min-width:710px;
 }
@@ -448,7 +447,7 @@ body { background-color:#e4e3df; }
 }
 
 .bar .view {
-	background-color: #CA002A;
+	background-color: #0152B0;
 	padding: 22px;
 	padding-left: 44px;
 	position: relative;
@@ -508,7 +507,11 @@ body { background-color:#e4e3df; }
 	padding: 10px;
 }
 
-
+.bar .bar-section-view {
+	background-color: #0152B0;
+	border-left: 1px solid #0152B0;
+	border-right: 1px solid #0152B0;
+}
 
 .bar .bar-section ul {
 	float: left;
@@ -526,7 +529,7 @@ body { background-color:#e4e3df; }
 }
 
 .bar .bar-section li a:hover,.bar .bar-section li a.on {
-	background-color: #CA002A;
+	background-color: #1e1e1e;
 	color: #fff;
 }
 
@@ -579,7 +582,7 @@ body { background-color:#e4e3df; }
 }
 
 .bar .bar-section-cat:hover .menu {
-	background-color: #CA002A;
+	background-color: #1e1e1e;
 }
 
 .bar .categories {
@@ -599,7 +602,7 @@ body { background-color:#e4e3df; }
 	position: absolute;
 	bottom: 100%;
 	right: 0;
-	width: 155px;
+	width: 310px;
 	background-color: rgb(65, 65, 65);
 	background-color: rgba(65, 65, 65, 0.95);
 }
