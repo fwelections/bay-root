@@ -31,7 +31,7 @@ var layers = [
   }];
 var map = L.mapbox.map('map')
     .setView([33.9274, 35.7701], 9)
-    .addLayer(L.mapbox.tileLayer('tunisia.map-ukt4mlk3'));
+    .addLayer(L.mapbox.tileLayer('tunisia.map-hp0uokr3'));
    
 
 function changeMap(options){

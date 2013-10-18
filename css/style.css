@@ -565,7 +565,7 @@ body { background-color:#e4e3df; }
 }
 
 .bar label {
-	color: darkgrey;
+	color: white;
 	font-size: 18px;
 	font-family: 'AllerBold', Helvetica, Arial, Sans-Serif;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
