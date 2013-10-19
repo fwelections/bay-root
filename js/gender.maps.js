@@ -20,14 +20,14 @@ var layers = [
   {
       name: 'femaleturnout',
       layer: L.layerGroup([
-          L.mapbox.tileLayer('tunisia.female_turnout'),
-          L.mapbox.gridLayer('tunisia.female_turnout')])
+          L.mapbox.tileLayer('tunisia.turnout_female'),
+          L.mapbox.gridLayer('tunisia.turnout_female')])
   },
   {
       name: 'maleturnout',
       layer: L.layerGroup([
-          L.mapbox.tileLayer('tunisia.male_turnout'),
-          L.mapbox.gridLayer('tunisia.male_turnout')])
+          L.mapbox.tileLayer('tunisia.turnout_male'),
+          L.mapbox.gridLayer('tunisia.turnout_male')])
   }];
 var map = L.mapbox.map('map')
     .setView([33.9274, 35.7701], 9)
