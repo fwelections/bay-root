@@ -25,10 +25,10 @@ var $catLinks = $(".bar-section-cat a");
 $(window).bind('hashchange', function(event) {
 	var hashOptions = $.deparam.fragment();
 	if (hashOptions.date == null) hashOptions.date = "59";
-	if (hashOptions.conf == null) hashOptions.conf = "sunni";
+	if (hashOptions.conf == null) hashOptions.conf = "minorities";
 	var filter = "";
 	for (var opt in hashOptions) {
-		if (hashOptions[opt] != "sunni") {
+		if (hashOptions[opt] != "minorities") {
 			filter += "." + hashOptions[opt];
 		}
 	}
@@ -36,7 +36,7 @@ $(window).bind('hashchange', function(event) {
 	$typeLinks.removeClass("on");
 	$typeLink.addClass("on");
 	var $catLink = $catLinks.filter("[href='#conf=" + hashOptions.conf +"']");
-	var removeClass = $catLinks.filter(".on").length > 0 ? $catLinks.filter(".on").attr("href").replace("#config=","") : "sunni";
+	var removeClass = $catLinks.filter(".on").length > 0 ? $catLinks.filter(".on").attr("href").replace("#config=","") : "minorities";
 	$(".categories .menu").html($catLink.html()).removeClass(removeClass).addClass(hashOptions.category).append("<em></em>");
 	$catLinks.removeClass("on");
 	$catLink.addClass("on");

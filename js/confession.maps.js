@@ -47,6 +47,18 @@ var layers = [{
           L.mapbox.gridLayer('tunisia.druze0912')])
   },
   {
+      name: 'grkcth0509',
+      layer: L.layerGroup([
+          L.mapbox.tileLayer('tunisia.grkcth0509'),
+          L.mapbox.gridLayer('tunisia.grkcth0509')])
+  },
+  {
+      name: 'grkcth0912',
+      layer: L.layerGroup([
+          L.mapbox.tileLayer('tunisia.grkcth0912'),
+          L.mapbox.gridLayer('tunisia.grkcth0912')])
+  },
+  {
       name: 'grkorth0509',
       layer: L.layerGroup([
           L.mapbox.tileLayer('tunisia.grkorth0509'),
