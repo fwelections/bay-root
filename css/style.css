@@ -953,10 +953,9 @@ ol,ul {
 .mobile .view { display:none; }
 .map-tooltip {
     background: none repeat scroll 0 0 #F5F5F5 !important;
-    color: white !important;
     font: 13px/20px Verdana,Tahoma !important;
     left: 50px !important;
-    max-height: 427px !important;
+    max-height: 600px !important;
     max-width: 427px !important;
     min-width: 427px !important;
     opacity: 0.9 !important;
