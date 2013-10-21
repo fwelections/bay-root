@@ -944,6 +944,18 @@ ol,ul {
     margin: 20px;
     padding: 15px;
 }
+#home-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C1C4C5;
+    box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.25);
+    color: #636363;
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-Serif;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 20px;
+    padding: 15px;
+    text-align:center;
+}
 #about-box p {
     font-size: 15px;
     line-height: 20px;
@@ -991,4 +1003,18 @@ text-align: center;
     float: left;
     width: 240px;
     display:none !important;
+}
+
+#masthead { 
+  background-image: url(splash.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color:#fff;
+  height: 200px;
+  margin: 34px;
+  border: 1px solid #333;
+}
+.map-button {
+  text-align: center; 
 }

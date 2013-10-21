@@ -13,13 +13,7 @@ $.bbq.pushState(option);
 return false;
 });
 } 
-$('.view').live('click', function(){
-	$('.view').each(function(){
-		$(this).removeClass('on')
-                
-	});
-	$(this).addClass('on');
-});
+
 var $typeLinks = $(".bar-section-view a");
 var $catLinks = $(".bar-section-cat a");
 $(window).bind('hashchange', function(event) {
@@ -62,21 +56,32 @@ if ($about.length && $aboutBox.length) {
 $about.colorbox({
 inline:true,
 width:"780px",
-"left":"220px",
+left:"220px",
 href:"#about-box",
 scrolling:false,
 onClosed: function() {
-if ($.cookie("returning") == null) {
-$.cookie("returning", true);
-}
-$('.view-map').trigger('click');
+console.log("home closed ");
 }
 });
-/*if ($.cookie("returning") == null) {
-$about.colorbox({open:true});
-}*/
+
 $("#about-box .close").on('click', function() {
 $.colorbox.close();
 return false;
 });
 } 
+
+$(".home").colorbox({
+inline:true,
+width:"780px",
+left:"220px",
+closeButton:false,
+href:"#home-box",
+scrolling:false,
+onClosed: function() {
+console.log("home closed ");
+}
+});
+$('.home').trigger('click');
+$('#confession').live('click', function(){
+$.colorbox.close();
+});

@@ -13,13 +13,7 @@ $.bbq.pushState(option);
 return false;
 });
 } 
-$('.view').live('click', function(){
-	$('.view').each(function(){
-		$(this).removeClass('on')
-                
-	});
-	$(this).addClass('on');
-});
+
 var $typeLinks = $(".bar-section-view a");
 var $catLinks = $(".bar-section-cat a");
 $(window).bind('hashchange', function(event) {
@@ -64,17 +58,9 @@ inline:true,
 width:"780px",
 "left":"220px",
 href:"#about-box",
-scrolling:false,
-onClosed: function() {
-if ($.cookie("returning") == null) {
-$.cookie("returning", true);
-}
-$('.view-map').trigger('click');
-}
+scrolling:false
 });
-/*if ($.cookie("returning") == null) {
-$about.colorbox({open:true});
-}*/
+
 $("#about-box .close").on('click', function() {
 $.colorbox.close();
 return false;
